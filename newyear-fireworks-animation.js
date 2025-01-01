@@ -1,6 +1,6 @@
 let chars, particles, canvas, ctx, w, h, current;
 let duration = 5000;
-let str = ['3','2','1','FELIZ', 'NUEVO', 'AÑO','2025', 'TREYZI'];
+let str = ['3','2','1','FELIZ', 'AÑO', 'NUEVO', '2025', 'TREYZI'];
 console.log(str); // Verifica el contenido del arreglo
 init();
 resize();
