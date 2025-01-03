@@ -1,36 +1,64 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    
-    <title>Feliz Año Nuevo Treyzi</title>
-      <script>
-        function reproducirMusica() {
-            var audio = document.getElementById("miMusica");
-            audio.play(); // Reproduce la música
-            document.body.style.backgroundColor = "#f0e68c"; // Cambia el color de fondo
-              }
-      </script>
-  </head>
-  <body>
-    <!-- credits @strangerintheq -->
-      
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Contenido del primer HTML -->
+    <!--link rel="stylesheet" href="css/style.css"-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Treyzi</title>
+    <style>
+        .oculto {
+            display: none;
+        }
+        #content1 .greetings, #content1 .description, #content1 .button {
+            text-align: center ; /* Centra el texto */
+            flex-wrap: nowrap !important;
+            flex-direction: row-reverse !important;
+            align-content: space-between !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenido del primer HTML -->
+    <div id="content1" align-items: center>
+        
+        <div class="description">
+            <span>Empezando un Nuevo Año!!</span>
+        </div>
+        <div class="button">
+            <button id="miBoton" onclick="showContent2()">Iniciar 2025</button>
+        </div>
+    </div>
 
-    
-    <audio id="miMusica" src="Yellow.mp3" loop></audio>
+    <!-- Contenido del segundo HTML -->
+    <div id="container2" class="oculto">
+        <!--div class="night"></div-->
+                
+        <audio id="MiMUsica" class="oculto" controls loop>
+            <source src="Yellow.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 
     <script>
-        document.body.addEventListener('click', function() {
-            var musica = document.getElementById('miMusica');
-            musica.play();
-        });
+        function showContent2() {
+            document.getElementById('content1').style.display = 'none';
+            document.getElementById('container2').style.display = 'block';
+            document.getElementById("MiMUsica").play();
+
+
+            if (!window.scriptCargado) {
+                var script = document.createElement('script');
+                script.src = 'newyear-fireworks-animation.js';
+                document.body.appendChild(script);
+                window.scriptCargado = true; // Marcar que el script ya fue cargado
+            }
+        }
     </script>
-
-
-    <script charset="UTF-8" src="newyear-fireworks-animation.js"></script>
-
-
-
-
-  </body>
+</body>
 </html>
